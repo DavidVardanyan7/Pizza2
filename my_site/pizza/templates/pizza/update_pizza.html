@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Pizza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #F5F5F5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        button[type="submit"] {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 14px;
+            text-decoration: none;
+            background-color: #0066CC;
+            color: #FFF;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        button[type="submit"]:hover {
+            background-color: #004F9D;
+        }
+        a {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 14px;
+            text-decoration: none;
+            background-color: #0066CC;
+            color: #FFF;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        a:hover {
+            background-color: #004F9D;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Pizza</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'pizza:pizza_detail' pizza_id=pizza.id %}">Cancel</a>
+</body>
+</html>
