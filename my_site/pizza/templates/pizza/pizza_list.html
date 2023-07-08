@@ -102,6 +102,11 @@
 <body>
     <div class="container">
         <h1>Fast Food Pizzas</h1>
+        <div class="user-buttons">
+            <a href="{% url 'login' %}" class="user-button">Login</a>
+            <a href="{% url 'register' %}" class="user-button">Sign Up</a>
+        </div>
+
         <form class="search-form" method="POST">
             {% csrf_token %}
             <input class="search-input" type="text" name="search_query" placeholder="Search Pizza" value="{{ search_query }}">

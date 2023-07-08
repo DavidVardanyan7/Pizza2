@@ -2,6 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Pizza
 from .forms import PizzaForm
+from .forms import PizzaSearchForm
 
 
 def pizza_list(request):
@@ -51,10 +52,7 @@ def delete_pizza(request, pizza_id):
     return render(request, 'pizza/delete_pizza.html', {'pizza': pizza})
 
 
-def listing(request):
-    pizza_list = Pizza.objects.all()
-    paginator = Paginator(pizza_list, 5)
 
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-    return render(request, "list.html", {"page_obj": page_obj})
+
+
+

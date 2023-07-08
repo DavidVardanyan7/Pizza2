@@ -22,3 +22,10 @@ class Pizza(models.Model):
 
     def __str__(self):
         return f"{self.company.name} - {self.pizza_type} Pizza"
+
+    class Pizza(models.Model):
+        name = models.CharField(max_length=100)
+        description = models.TextField()
+        price = models.DecimalField(max_digits=5, decimal_places=2)
+        dough_type = models.CharField(max_length=100)
+        company = models.CharField(max_length=100)
